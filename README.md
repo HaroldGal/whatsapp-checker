@@ -15,10 +15,16 @@ Useful project to test technologies.
 - **Spark + SQL scripts** to explore and analyze the data
 
 ## 📌 Objectives (MAYBE WOULD CHANGE)
-- [ ]  Parse raw WhatsApp .txt export into structured format;
+- [x] Automatize unzip tasks;
+- [ ] Parse raw WhatsApp .txt export into structured format;
 - [ ] Provision GCS bucket via Terraform;
 - [ ] Upload parsed data to GCS following Apache Iceberg practices;
 - [ ] Create usable layers of data with CLI tools;
 - [ ] Have visualisation or toolbox to get some KPIs (TO DEFINE).
 
 ## 🚀 Quickstart (coming soon)
+
+### Source system setup
+
+1. Extract aimes conversation on whatsApp application.
+2. Copy all files (*.zip) into whats_app_extracts folder.

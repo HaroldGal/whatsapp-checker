@@ -13,9 +13,16 @@ RAW_DIR = path.join(BASE_DIR, "../data/raw")
 OUTPUT_DIR = path.join(BASE_DIR, "../data/bronze")
 
 LINE_REGEX = re.compile(r"^\[(.*)\] (.*): (.*)$")
+GROUP_NAME_REGEX = re.compile(r"WhatsApp Chat - (.*)")
 
 def remove_200E(s: str) -> str:
     return s.replace("\u200E", "").strip()
+
+def slugify(text: str) -> str:
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9\s]', '', text)
+    text = re.sub(r'\s+', '_', text)
+    return text
 
 def parse_chat_file(file_path: Path, group_name: str) -> pl.DataFrame | None:
     records = []
@@ -35,7 +42,9 @@ def parse_chat_file(file_path: Path, group_name: str) -> pl.DataFrame | None:
 
 def parse_and_save_each_chat():
     for chat_file in Path(RAW_DIR).rglob("_chat.txt"):
-        group_name = chat_file.parent.name
+        parent_name = chat_file.parent.name
+        group_name = GROUP_NAME_REGEX.match(parent_name).group(1)
+        group_name = slugify(remove_200E(group_name))
         print(f"Parsing {chat_file} (group: {group_name})")
 
         df = parse_chat_file(chat_file, group_name)

@@ -17,7 +17,7 @@ Useful project to test technologies.
 ## 📌 Objectives (MAYBE WOULD CHANGE)
 - [x] Automatize unzip tasks;
 - [x] Parse raw WhatsApp .txt export into structured format;
-- [ ] Provision GCS bucket via Terraform;
+- [x] Provision GCS bucket via Terraform;
 - [ ] Upload parsed data to GCS following Apache Iceberg practices;
 - [ ] Create usable layers of data with CLI tools;
 - [ ] Have visualisation or toolbox to get some KPIs (TO DEFINE).
@@ -28,5 +28,5 @@ Useful project to test technologies.
 
 1. Extract aimed conversations on whatsApp application.
 2. Copy all files (*.zip) into whats_app_extracts folder.
-3. Use terraform to create GCS environment.
+3. Use terraform to create GCS environment -> follow terraform/README.md.
 4. Use differents scripts to load it into GCS as parquet.

@@ -1,6 +1,6 @@
 # 📦 Terraform - WhatsApp Analyzer Infra
 
-This folder contains Terraform code to create a GCS bucket for storing WhatsApp parsed data.
+This folder contains Terraform code to create a GCS bucket for storing WhatsApp parsed data. It is super easy setup because this project is dev-only and we need only a GCS bucket for now.
 
 Do not forget to setup your GCP credentials with gcloud auth.
 

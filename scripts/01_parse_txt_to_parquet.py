@@ -10,7 +10,7 @@ import polars as pl
 
 BASE_DIR = path.dirname(path.realpath(__file__))
 RAW_DIR = path.join(BASE_DIR, "../data/raw")
-OUTPUT_DIR = path.join(BASE_DIR, "../data/bronze")
+OUTPUT_DIR = path.join(BASE_DIR, "../data/local_landing")
 
 LINE_REGEX = re.compile(r"^\[(.*)\] (.*): (.*)$")
 GROUP_NAME_REGEX = re.compile(r"WhatsApp Chat - (.*)")

@@ -7,9 +7,9 @@ from google.cloud import storage
 from os import path
 
 BASE_DIR = path.dirname(path.realpath(__file__))
-BRONZE_DIR = Path(path.join(BASE_DIR, "../data/bronze"))
+BRONZE_DIR = Path(path.join(BASE_DIR, "../data/local_landing"))
 GCS_BUCKET = "whatsapp-database"
-GCS_FOLDER = "bronze/"
+GCS_FOLDER = "landing/"
 
 def upload_file(client, local_path, bucket_name, gcs_path):
     bucket = client.bucket(bucket_name)
